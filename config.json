@@ -1,11 +1,11 @@
 {
   "transport": "ws",
-  "websocket": "wss://steemd.steemit.com",
-  "websocketdev": "wss://steemd.steemitdev.com",
-  "uri": "https://steemd.steemit.com",
+  "websocket": "wss://testnet.smoke.io/wss",
+  "websocketdev": "wss://testnet.smoke.io/wss",
+  "uri": "https://testnet.smoke.io/wss",
   "url": "",
-  "dev_uri": "https://steemd.steemitdev.com",
-  "stage_uri": "https://steemd.steemitstage.com",
-  "address_prefix": "STM",
-  "chain_id": "0000000000000000000000000000000000000000000000000000000000000000"
+  "dev_uri": "https://testnet.smoke.io/wss",
+  "stage_uri": "https://testnet.smoke.io/wss",
+  "address_prefix": "SMK",
+  "chain_id": "a66e00caa50e6817bbe24e927bf48c5d4ba1b33f36bdbb5fa262a04012c4e3ee"
 }
