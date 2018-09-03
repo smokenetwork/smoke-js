@@ -695,42 +695,6 @@ steem.broadcast.fillVestingWithdraw(wif, fromAccount, toAccount, withdrawn, depo
   console.log(err, result);
 });
 ```
-### Interest
-```
-steem.broadcast.interest(wif, owner, interest, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Cancel
-```
-steem.broadcast.limitOrderCancel(wif, owner, orderid, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Create
-```
-steem.broadcast.limitOrderCreate(wif, owner, orderid, amountToSell, minToReceive, fillOrKill, expiration, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Create2
-```
-steem.broadcast.limitOrderCreate2(wif, owner, orderid, amountToSell, exchangeRate, fillOrKill, expiration, function(err, result) {
-  console.log(err, result);
-});
-```
-### Liquidity Reward
-```
-steem.broadcast.liquidityReward(wif, owner, payout, function(err, result) {
-  console.log(err, result);
-});
-```
-### Pow
-```
-steem.broadcast.pow(wif, worker, input, signature, work, function(err, result) {
-  console.log(err, result);
-});
-```
 ### Prove Authority
 ```
 steem.broadcast.proveAuthority(wif, challenged, requireOwner, function(err, result) {
