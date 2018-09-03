@@ -13,7 +13,6 @@ Steem.js the JavaScript API for Steem blockchain
     - [Globals](https://github.com/steemit/steem-js/tree/master/doc#globals)
     - [Keys](https://github.com/steemit/steem-js/tree/master/doc#keys)
     - [Accounts](https://github.com/steemit/steem-js/tree/master/doc#accounts)
-    - [Market](https://github.com/steemit/steem-js/tree/master/doc#market)
     - [Authority / validation](https://github.com/steemit/steem-js/tree/master/doc#authority--validation)
     - [Votes](https://github.com/steemit/steem-js/tree/master/doc#votes)
     - [Content](https://github.com/steemit/steem-js/tree/master/doc#content)
@@ -54,9 +53,8 @@ $ npm install steem --save
 ```
 
 ## WebSockets
-wss://steemd.steemit.com By Default<br/>
-wss://node.steem.ws<br/>
-wss://this.piston.rocks<br/>
+wss://testnet.smoke.io/wss
+
 
 ## Examples
 ### Broadcast Vote

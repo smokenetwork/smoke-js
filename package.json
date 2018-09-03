@@ -1,7 +1,7 @@
 {
-  "name": "steem",
-  "version": "0.6.5",
-  "description": "Steem.js the JavaScript API for Steem blockchain",
+  "name": "smoke-js",
+  "version": "0.1.0",
+  "description": "smoke-js the JavaScript API for Smoke blockchain",
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint --quiet src test; mocha -t 20000 --require babel-polyfill --require babel-register",
@@ -18,20 +18,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/steemit/steem-js.git"
+    "url": "git+https://github.com/smokenetwork/smoke-js.git"
   },
   "keywords": [
-    "steem",
-    "steemit",
+    "smoke",
     "blockchain",
-    "steemjs"
+    "smoke-js"
   ],
-  "author": "Fabien (https://github.com/bonustrack)",
+  "author": "Smoke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/steemit/steem-js/issues"
+    "url": "https://github.com/smokenetwork/smoke-js/issues"
   },
-  "homepage": "https://github.com/steemit/steem-js#readme",
+  "homepage": "https://github.com/smokenetwork/smoke-js",
   "dependencies": {
     "bigi": "^1.4.2",
     "bluebird": "^3.4.6",
@@ -72,6 +71,7 @@
     "webpack-visualizer-plugin": "^0.1.5"
   },
   "contributors": [
+    "Smoke Dev",
     "Fabien (https://github.com/bonustrack)",
     "James Calfee (https://github.com/jcalfee)",
     "Nilesh Suthar (https://github.com/nil1511)",
