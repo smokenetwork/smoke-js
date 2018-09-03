@@ -48,7 +48,7 @@ steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd4
 ```
 ### set
 ```
-steem.config.set('address_prefix','STM');
+steem.config.set('address_prefix','SMK');
 ```
 ### get
 ```
@@ -58,7 +58,7 @@ steem.config.get('chain_id');
 ## JSON-RPC
 Here is how to activate JSON-RPC transport:
 ```js
-steem.api.setOptions({ url: 'https://steemd.steemit.com' });
+steem.api.setOptions({ url: 'https://testnet.smoke.io/wss' });
 ```
 
 # API
@@ -692,42 +692,6 @@ steem.broadcast.fillOrder(wif, currentOwner, currentOrderid, currentPays, openOw
 ### Fill Vesting Withdraw
 ```
 steem.broadcast.fillVestingWithdraw(wif, fromAccount, toAccount, withdrawn, deposited, function(err, result) {
-  console.log(err, result);
-});
-```
-### Interest
-```
-steem.broadcast.interest(wif, owner, interest, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Cancel
-```
-steem.broadcast.limitOrderCancel(wif, owner, orderid, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Create
-```
-steem.broadcast.limitOrderCreate(wif, owner, orderid, amountToSell, minToReceive, fillOrKill, expiration, function(err, result) {
-  console.log(err, result);
-});
-```
-### Limit Order Create2
-```
-steem.broadcast.limitOrderCreate2(wif, owner, orderid, amountToSell, exchangeRate, fillOrKill, expiration, function(err, result) {
-  console.log(err, result);
-});
-```
-### Liquidity Reward
-```
-steem.broadcast.liquidityReward(wif, owner, payout, function(err, result) {
-  console.log(err, result);
-});
-```
-### Pow
-```
-steem.broadcast.pow(wif, worker, input, signature, work, function(err, result) {
   console.log(err, result);
 });
 ```
