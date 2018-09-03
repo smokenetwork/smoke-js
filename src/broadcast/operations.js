@@ -145,7 +145,6 @@ module.exports = [
       "author",
       "permlink",
       "max_accepted_payout",
-      "percent_steem_dollars",
       "allow_votes",
       "allow_curation_rewards",
       "extensions"
