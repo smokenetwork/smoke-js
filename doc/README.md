@@ -58,7 +58,7 @@ steem.config.get('chain_id');
 ## JSON-RPC
 Here is how to activate JSON-RPC transport:
 ```js
-steem.api.setOptions({ url: 'https://testnet.smoke.io/wss' });
+steem.api.setOptions({ url: 'https://rpc.smoke.io' });
 ```
 
 # API
