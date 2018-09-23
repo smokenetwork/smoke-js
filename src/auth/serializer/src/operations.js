@@ -445,7 +445,6 @@ let author_reward = new Serializer(
     "author_reward", {
     author: string,
     permlink: string,
-    sbd_payout: asset,
     steem_payout: asset,
     vesting_payout: asset
 }

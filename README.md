@@ -53,7 +53,7 @@ $ npm install steem --save
 ```
 
 ## WebSockets
-wss://testnet.smoke.io/wss
+wss://rpc.smoke.io
 
 
 ## Examples

@@ -1,11 +1,11 @@
 {
   "transport": "ws",
-  "websocket": "wss://testnet.smoke.io/wss",
-  "websocketdev": "wss://testnet.smoke.io/wss",
-  "uri": "https://testnet.smoke.io/wss",
+  "websocket": "wss://rpc.smoke.io",
+  "websocketdev": "wss://rpc.smoke.io",
+  "uri": "https://rpc.smoke.io",
   "url": "",
-  "dev_uri": "https://testnet.smoke.io/wss",
-  "stage_uri": "https://testnet.smoke.io/wss",
+  "dev_uri": "https://rpc.smoke.io",
+  "stage_uri": "https://rpc.smoke.io",
   "address_prefix": "SMK",
-  "chain_id": "a66e00caa50e6817bbe24e927bf48c5d4ba1b33f36bdbb5fa262a04012c4e3ee"
+  "chain_id": "1ce08345e61cd3bf91673a47fc507e7ed01550dab841fd9cdb0ab66ef576aaf0"
 }
