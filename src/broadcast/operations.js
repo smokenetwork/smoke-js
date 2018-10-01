@@ -281,7 +281,6 @@ module.exports = [
     "params": [
       "account",
       "reward_steem",
-      "reward_sbd",
       "reward_vests"
     ]
   },

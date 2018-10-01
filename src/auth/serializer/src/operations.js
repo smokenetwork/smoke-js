@@ -413,7 +413,6 @@ let claim_reward_balance = new Serializer(
     "claim_reward_balance", {
     account: string,
     reward_steem: asset,
-    reward_sbd: asset,
     reward_vests: asset
 }
 );
