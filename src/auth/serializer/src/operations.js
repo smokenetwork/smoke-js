@@ -225,8 +225,7 @@ let account_update = new Serializer(
 let chain_properties = new Serializer(
     "chain_properties", {
     account_creation_fee: asset,
-    maximum_block_size: uint32,
-    sbd_interest_rate: uint16
+    maximum_block_size: uint32
 }
 );
 
