@@ -1,8 +1,8 @@
 import assert from "assert"
 import { toImpliedDecimal, fromImpliedDecimal } from "../src/auth/serializer/src/number_utils"
 
-describe("steem.auth: Number utils", () => {
-    
+describe("smoke.auth: Number utils", () => {
+
 
     it("to implied decimal", ()=> {
         assert.equal("1", toImpliedDecimal(1, 0))
@@ -15,7 +15,7 @@ describe("steem.auth: Number utils", () => {
         assert.throws(()=> toImpliedDecimal("00.100", 2))
         assert.throws(()=> toImpliedDecimal(9007199254740991 + 1, 1))
     })
-    
+
     it("from implied decimal", ()=> {
         assert.equal("1", fromImpliedDecimal(1, 0))
         assert.equal("0.1", fromImpliedDecimal(1, 1))
@@ -23,6 +23,6 @@ describe("steem.auth: Number utils", () => {
         // must have suffixing zeros
         assert.equal("0.100", fromImpliedDecimal(100, 3))
     })
-        
+
 
 })

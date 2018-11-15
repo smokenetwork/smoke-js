@@ -4,7 +4,7 @@ import newDebug from 'debug';
 import Transport from './base';
 
 const { fetch } = fetchPonyfill(Promise);
-const debug = newDebug('steem:http');
+const debug = newDebug('smoke:http');
 
 class RPCError extends Error {
   constructor(rpcError) {
@@ -39,7 +39,7 @@ export function jsonRpc(uri, {method, id, params}) {
 
 export default class HttpTransport extends Transport {
   send(api, data, callback) {
-    debug('Steem::send', api, data);
+    debug('Smoke::send', api, data);
     const id = data.id || this.id++;
     const params = [api, data.method, data.params];
     jsonRpc(this.options.uri, {method: 'call', id, params})

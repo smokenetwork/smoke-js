@@ -8,7 +8,7 @@ import steemApi from '../api';
 import steemAuth from '../auth';
 import { camelCase } from '../utils';
 
-const debug = newDebug('steem:broadcast');
+const debug = newDebug('smoke:broadcast');
 const noop = function() {}
 const formatter = formatterFactory(steemApi);
 

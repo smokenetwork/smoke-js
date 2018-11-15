@@ -1,15 +1,15 @@
 import Promise from 'bluebird';
 import should from 'should';
-import steem from '../src';
+import smoke from '../src';
 import pkg from '../package.json';
 
 const username = process.env.STEEM_USERNAME || 'guest123';
 const password = process.env.STEEM_PASSWORD;
 const postingWif = password
-  ? steem.auth.toWif(username, password, 'posting')
+  ? smoke.auth.toWif(username, password, 'posting')
   : '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
 
-describe('steem.broadcast:', () => {
+describe('smoke.broadcast:', () => {
 
   describe('comment with options', () => {
     before(() => {
@@ -17,7 +17,7 @@ describe('steem.broadcast:', () => {
     });
 
     it('works', async () => {
-      const permlink = steem.formatter.commentPermlink('siol', 'test');
+      const permlink = smoke.formatter.commentPermlink('siol', 'test');
       const operations = [
         ['comment',
           {
@@ -26,10 +26,10 @@ describe('steem.broadcast:', () => {
             author: username,
             permlink,
             title: 'Test',
-            body: `This is a test using Steem.js v${pkg.version}.`,
+            body: `This is a test using Smoke.js v${pkg.version}.`,
             json_metadata : JSON.stringify({
               tags: ['test'],
-              app: `steemjs/${pkg.version}`
+              app: `smoke/${pkg.version}`
             })
           }
         ],
@@ -50,7 +50,7 @@ describe('steem.broadcast:', () => {
         }]
       ];
 
-      const tx = await steem.broadcast.sendAsync(
+      const tx = await smoke.broadcast.sendAsync(
         { operations, extensions: [] },
         { posting: postingWif }
       );

@@ -10,7 +10,7 @@ steem.api.getAccounts(['dan'], function(err, result) {
 	console.log(reputation);
 });
 
-steem.api.getState('trending/steemit', function(err, result) {
+steem.api.getState('trending/smoke', function(err, result) {
 	console.log(err, result);
 });
 

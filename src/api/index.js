@@ -16,7 +16,7 @@ import {
     jsonRpc
 } from './transports/http';
 
-class Steem extends EventEmitter {
+class Smoke extends EventEmitter {
     constructor(options = {}) {
         super(options);
         this._setTransport(options);
@@ -321,6 +321,6 @@ class Steem extends EventEmitter {
 }
 
 // Export singleton instance
-const steem = new Steem(config);
-exports = module.exports = steem;
-exports.Steem = Steem;
+const smoke = new Smoke(config);
+exports = module.exports = smoke;
+exports.Smoke = Smoke;

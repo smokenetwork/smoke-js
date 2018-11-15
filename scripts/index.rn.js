@@ -17,5 +17,5 @@ global.crypto = {
   },
 };
 
-require('../dist/steem.min.js');
-module.exports = global.steem;
+require('../dist/smoke.min.js');
+module.exports = global.smoke;

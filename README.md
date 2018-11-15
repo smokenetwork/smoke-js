@@ -1,5 +1,5 @@
-# Steem.js
-Steem.js the JavaScript API for Steem blockchain
+# Smoke.js
+Smoke.js the JavaScript API for Smoke blockchain
 
 # Documentation
 

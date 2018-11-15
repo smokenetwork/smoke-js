@@ -13,7 +13,7 @@ if (isNode) {
   throw new Error("Couldn't decide on a `WebSocket` class");
 }
 
-const debug = newDebug('steem:ws');
+const debug = newDebug('smoke:ws');
 
 export default class WsTransport extends Transport {
   constructor(options = {}) {
@@ -29,12 +29,12 @@ export default class WsTransport extends Transport {
     if (this.startPromise) {
       return this.startPromise;
     }
- 
+
     this.startPromise = new Promise((resolve, reject) => {
       this.ws = new WebSocket(this.options.websocket);
       this.ws.onerror = (err) => {
         this.startPromise = null;
-        reject(err);        
+        reject(err);
       };
       this.ws.onopen = () => {
         this.isOpen = true;
@@ -43,7 +43,7 @@ export default class WsTransport extends Transport {
         this.ws.onclose = this.onClose.bind(this);
         resolve();
       };
-    }); 
+    });
     return this.startPromise;
   }
 
@@ -62,7 +62,7 @@ export default class WsTransport extends Transport {
   }
 
   send(api, data, callback) {
-    debug('Steem::send', api, data);
+    debug('Smoke::send', api, data);
     return this.start().then(() => {
       const deferral = {};
       new Promise((resolve, reject) => {
@@ -87,7 +87,7 @@ export default class WsTransport extends Transport {
           id: data.id || this.id++,
           method: 'call',
           jsonrpc: '2.0',
-          params: [api, data.method, data.params]        
+          params: [api, data.method, data.params]
         }
       };
       this.inFlight++;
@@ -114,7 +114,7 @@ export default class WsTransport extends Transport {
 
   onMessage(websocketMessage) {
     const message = JSON.parse(websocketMessage.data);
-    debug('-- Steem.onMessage -->', message.id);
+    debug('-- Smoke.onMessage -->', message.id);
     if (!this._requests.has(message.id)) {
       throw new Error(`Panic: no request in queue for message id ${message.id}`);
     }

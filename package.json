@@ -1,11 +1,11 @@
 {
   "name": "@smokenetwork/smoke-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "smoke-js the JavaScript API for Smoke blockchain",
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint --quiet src test; mocha -t 20000 --require babel-polyfill --require babel-register",
-    "test-auth": "npm test -- --grep 'steem.auth'",
+    "test-auth": "npm test -- --grep 'smoke.auth'",
     "build": "npm run build-browser && npm run build-node",
     "build-browser": "rm -rf dist && NODE_ENV=production node ./node_modules/webpack/bin/webpack.js && gzip -k -f ./dist/*.js && du -h ./dist/*",
     "build-node": "mkdir -p ./lib && cp -r ./src/* ./lib/ && babel ./src --out-dir ./lib",
