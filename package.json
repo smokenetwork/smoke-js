@@ -1,6 +1,6 @@
 {
   "name": "@smokenetwork/smoke-js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "smoke-js the JavaScript API for Smoke blockchain",
   "main": "lib/index.js",
   "scripts": {

@@ -7,5 +7,7 @@
   "dev_uri": "https://rpc.smoke.io",
   "stage_uri": "https://rpc.smoke.io",
   "address_prefix": "SMK",
-  "chain_id": "1ce08345e61cd3bf91673a47fc507e7ed01550dab841fd9cdb0ab66ef576aaf0"
+  "chain_id": "1ce08345e61cd3bf91673a47fc507e7ed01550dab841fd9cdb0ab66ef576aaf0",
+  "wv_obj": null,
+  "whalevault": null
 }
