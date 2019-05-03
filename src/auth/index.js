@@ -112,10 +112,10 @@ Auth.reqWhaleVaultSig = function (trx, keys, keyType) {
     if (config.get('chain_id') != null) wv_ops.chainId = config.get('chain_id');
     let user_arr = keys[keyType].split(':');  // ie.  userid:reason
     if (user_arr[1] == "") user_arr[1] = trx.operations[0][0];  // set a default reason if blank
-                if (keyType == '0') {
-                        // no default scope, check for `userid:reason:scope`
-                        if (user_arr.length >= 3) keyType = user_arr[2]; else keyType = 'posting';
-                }
+    if (keyType == '0') {
+            // no default scope, check for `userid:reason:scope`
+            if (user_arr.length >= 3) keyType = user_arr[2]; else keyType = 'posting';
+    }
 
     return config.get('whalevault')
       .promiseRequestSignBuffer('smokejs', `smk:${user_arr[0]}`, wv_ops, keyType, user_arr[1], 'tx')
@@ -125,7 +125,8 @@ Auth.reqWhaleVaultSig = function (trx, keys, keyType) {
           trx.expiration = new Date(response.data.message.expiration * 1000);
           return trx;
         } else {
-          throw new Error(`whalevault: ${response.error} [${response.message}]', ${response}`);
+          console.error(response);
+          throw new Error(`whalevault: ${response.error} [${response.message}]`);
         }
       });
   }
