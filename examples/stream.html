@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Steem.js Stream</title>
+  <title>Smoke.js Stream</title>
 </head>
 <body>
 
-<script src="../dist/steem.min.js"></script>
+<script src="../dist/smoke.min.js"></script>
 <script>
-steem.api.streamOperations(function (err, operations) {
+smoke.api.streamOperations(function (err, operations) {
   operations.forEach(function (operation) {
     console.log(operation);
   });

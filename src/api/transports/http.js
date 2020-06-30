@@ -1,10 +1,7 @@
-import fetchPonyfill from 'fetch-ponyfill';
-import Promise from 'bluebird';
 import newDebug from 'debug';
 import Transport from './base';
-
-const { fetch } = fetchPonyfill(Promise);
-const debug = newDebug('steem:http');
+import fetch from 'cross-fetch';
+const debug = newDebug('smoke:http');
 
 class RPCError extends Error {
   constructor(rpcError) {
@@ -21,6 +18,10 @@ export function jsonRpc(uri, {method, id, params}) {
     body: JSON.stringify(payload),
     method: 'post',
     mode: 'cors',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    },
   }).then(res => {
     if (!res.ok) {
       throw new Error(`HTTP ${ res.status }: ${ res.statusText }`);
@@ -39,7 +40,10 @@ export function jsonRpc(uri, {method, id, params}) {
 
 export default class HttpTransport extends Transport {
   send(api, data, callback) {
-    debug('Steem::send', api, data);
+    if (this.options.useAppbaseApi) {
+      api = 'condenser_api';
+    }
+    debug('Smoke::send', api, data);
     const id = data.id || this.id++;
     const params = [api, data.method, data.params];
     jsonRpc(this.options.uri, {method: 'call', id, params})

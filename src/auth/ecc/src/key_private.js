@@ -7,8 +7,8 @@ var assert = require('assert');
 var hash = require('./hash');
 var PublicKey = require('./key_public');
 
-var G = secp256k1.G
-var n = secp256k1.n
+var G = secp256k1.G;
+var n = secp256k1.n;
 
 class PrivateKey {
 

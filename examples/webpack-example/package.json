@@ -1,5 +1,5 @@
 {
-  "name": "steem-js-webpack-example",
+  "name": "smoke-js-webpack-example",
   "scripts": {
     "build": "npm run build-web && npm run build-node",
     "build-web": "webpack",
@@ -10,6 +10,6 @@
     "webpack": "^3.0.0"
   },
   "dependencies": {
-    "steem": "^0.5.20"
+    "smoke": "^0.5.20"
   }
 }

@@ -6,8 +6,8 @@ const secureRandom = require('secure-random');
 // hash for .25 second
 const HASH_POWER_MILLS = 250;
 
-let entropyPos = 0, entropyCount = 0
-const entropyArray = secureRandom.randomBuffer(101)
+let entropyPos = 0, entropyCount = 0;
+const entropyArray = secureRandom.randomBuffer(101);
 
 module.exports = {
 

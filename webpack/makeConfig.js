@@ -20,16 +20,6 @@ function makePlugins(options) {
 
   if (!isDevelopment) {
     plugins = plugins.concat([
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false,
-        },
-        minimize: true,
-        compress: {
-          warnings: false,
-        }
-      }),
       new webpack.optimize.AggressiveMergingPlugin(),
     ]);
   }
@@ -42,7 +32,7 @@ function makeStyleLoaders(options) {
     return [
       {
         test: /\.s[ac]ss$/,
-        loaders: [
+        rules: [
           'style',
           'css?sourceMap',
           'autoprefixer-loader?browsers=last 2 version',
@@ -71,9 +61,12 @@ function makeConfig(options) {
 
   return {
     devtool: isDevelopment ? 'cheap-eval-source-map' : 'source-map',
+    //optimization: {
+    //  minimize: false
+    //},
     entry: {
-      steem: path.join(options.baseDir, 'src/browser.js'),
-      'steem-tests': path.join(options.baseDir, 'test/api.test.js'),
+      smoke: path.join(options.baseDir, 'src/browser.js'),
+      'smoke-tests': path.join(options.baseDir, 'test/api.test.js'),
     },
     output: {
       path: path.join(options.baseDir, 'dist'),
@@ -81,14 +74,14 @@ function makeConfig(options) {
     },
     plugins: makePlugins(options),
     module: {
-      loaders: [
+      rules: [
         {
-          test: /\.js?$/,
-          loader: 'babel',
+          test: /\.js$/,
+          loader: 'babel-loader',
         },
         {
-          test: /\.json?$/,
-          loader: 'json',
+          test: /\.json$///,
+          //loader: 'json-loader',
         },
       ],
     },

@@ -1,9 +1,9 @@
-const steem = require('../lib');
+const smoke = require('../lib');
 
 const privWif1 = '5K2LA2ucS8b1GuFvVgZK6itKNE6fFMbDMX4GDtNHiczJESLGRd8';
 const privWif2 = '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
 
-steem.broadcast.send({
+smoke.broadcast.send({
   extensions: [],
   operations: [
     ['vote', {
