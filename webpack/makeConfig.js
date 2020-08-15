@@ -80,7 +80,7 @@ function makeConfig(options) {
           loader: 'babel-loader',
         },
         {
-          test: /\.json?$
+          test: /\.json?$/
         },
       ],
     },
