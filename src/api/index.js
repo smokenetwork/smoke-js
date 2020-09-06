@@ -15,8 +15,11 @@ import {
 import {
     jsonRpc
 } from './transports/http';
+import {
+    sign as signRequest
+} from '@steemit/rpc-auth';
 
-class Steem extends EventEmitter {
+class Smoke extends EventEmitter {
     constructor(options = {}) {
         super(options);
         this._setTransport(options);
@@ -153,6 +156,23 @@ class Steem extends EventEmitter {
         }
         const id = ++this.seqNo;
         jsonRpc(this.options.uri, {method, params, id})
+            .then(res => { callback(null, res) }, err => { callback(err) });
+    }
+
+    signedCall(method, params, account, key, callback) {
+        if (this._transportType !== 'http') {
+            callback(new Error('RPC methods can only be called when using http transport'));
+            return;
+        }
+        const id = ++this.seqNo;
+        let request;
+        try {
+            request = signRequest({method, params, id}, account, [key]);
+        } catch (error) {
+            callback(error);
+            return;
+        }
+        jsonRpc(this.options.uri, request)
             .then(res => { callback(null, res) }, err => { callback(err) });
     }
 
@@ -323,6 +343,6 @@ class Steem extends EventEmitter {
 }
 
 // Export singleton instance
-const steem = new Steem(config);
-exports = module.exports = steem;
-exports.Steem = Steem;
+const smoke = new Smoke(config);
+exports = module.exports = smoke;
+exports.Smoke = Smoke;

@@ -1,13 +1,13 @@
 
-// This file is merge updated from steemd's js_operation_serializer program.
+// This file is merge updated from smoked's js_operation_serializer program.
 /*
 
 ./js_operation_serializer |
 sed 's/void/future_extensions/g'|
-sed 's/steemit_protocol:://g'|
+sed 's/smokeit_protocol:://g'|
 sed 's/14static_variantIJNS_12fixed_stringINSt3__14pairIyyEEEEEEE/string/g'|
-sed 's/steemit_future_extensions/future_extensions/g'|
-sed 's/steemit_protocol_//g' > tmp.coffee
+sed 's/smokeit_future_extensions/future_extensions/g'|
+sed 's/smokeit_protocol_//g' > tmp.coffee
 
 */
 // coffee tmp.coffee # fix errors until you see: `ChainTypes is not defined`
@@ -347,7 +347,7 @@ let escrow_transfer = new Serializer(
     from: string,
     to: string,
     sbd_amount: asset,
-    steem_amount: asset,
+    smoke_amount: asset,
     escrow_id: uint32,
     agent: string,
     fee: asset,
@@ -376,7 +376,7 @@ let escrow_release = new Serializer(
     receiver: string,
     escrow_id: uint32,
     sbd_amount: asset,
-    steem_amount: asset
+    smoke_amount: asset
 }
 );
 
@@ -412,7 +412,7 @@ let decline_voting_rights = new Serializer(
 let claim_reward_balance = new Serializer(
     "claim_reward_balance", {
     account: string,
-    reward_steem: asset,
+    reward_smoke: asset,
     reward_vests: asset
 }
 );
@@ -444,7 +444,7 @@ let author_reward = new Serializer(
     "author_reward", {
     author: string,
     permlink: string,
-    steem_payout: asset,
+    smoke_payout: asset,
     vesting_payout: asset
 }
 );

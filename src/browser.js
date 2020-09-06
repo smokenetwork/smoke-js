@@ -1,13 +1,15 @@
 const api = require("./api");
 const auth = require("./auth");
+const memo = require("./auth/memo");
 const broadcast = require("./broadcast");
 const config = require("./config");
 const formatter = require("./formatter")(api);
 const utils = require("./utils");
 
-const steem = {
+const smoke = {
   api,
   auth,
+  memo,
   broadcast,
   config,
   formatter,
@@ -15,11 +17,11 @@ const steem = {
 };
 
 if (typeof window !== "undefined") {
-  window.steem = steem;
+  window.smoke = smoke;
 }
 
 if (typeof global !== "undefined") {
-  global.steem = steem;
+  global.smoke = smoke;
 }
 
-exports = module.exports = steem;
+exports = module.exports = smoke;

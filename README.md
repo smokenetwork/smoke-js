@@ -1,94 +1,87 @@
-# Steem.js
-Steem.js the JavaScript API for Steem blockchain
+# Smoke.js
+Smoke.js is a JavaScript API for the Smoke blockchain
 
 # Documentation
 
-- [Install](https://github.com/steemit/steem-js/tree/master/doc#install)
-- [Browser](https://github.com/steemit/steem-js/tree/master/doc#browser)
-- [Config](https://github.com/steemit/steem-js/tree/master/doc#config)
-- [Database API](https://github.com/steemit/steem-js/tree/master/doc#api)
-    - [Subscriptions](https://github.com/steemit/steem-js/tree/master/doc#subscriptions)
-    - [Tags](https://github.com/steemit/steem-js/tree/master/doc#tags)
-    - [Blocks and transactions](https://github.com/steemit/steem-js/tree/master/doc#blocks-and-transactions)
-    - [Globals](https://github.com/steemit/steem-js/tree/master/doc#globals)
-    - [Keys](https://github.com/steemit/steem-js/tree/master/doc#keys)
-    - [Accounts](https://github.com/steemit/steem-js/tree/master/doc#accounts)
-    - [Authority / validation](https://github.com/steemit/steem-js/tree/master/doc#authority--validation)
-    - [Votes](https://github.com/steemit/steem-js/tree/master/doc#votes)
-    - [Content](https://github.com/steemit/steem-js/tree/master/doc#content)
-    - [Witnesses](https://github.com/steemit/steem-js/tree/master/doc#witnesses)
-- [Login API](https://github.com/steemit/steem-js/tree/master/doc#login)
-- [Follow API](https://github.com/steemit/steem-js/tree/master/doc#follow-api)
-- [Broadcast API](https://github.com/steemit/steem-js/tree/master/doc#broadcast-api)
-- [Broadcast](https://github.com/steemit/steem-js/tree/master/doc#broadcast)
-- [Auth](https://github.com/steemit/steem-js/tree/master/doc#auth)
+- [Install](https://github.com/smokenetwork/smoke-js/tree/master/doc#install)
+- [Browser](https://github.com/smokenetwork/smoke-js/tree/master/doc#browser)
+- [Config](https://github.com/smokenetwork/smoke-js/tree/master/doc#config)
+- [Database API](https://github.com/smokenetwork/smoke-js/tree/master/doc#api)
+    - [Subscriptions](https://github.com/smokenetwork/smoke-js/tree/master/doc#subscriptions)
+    - [Tags](https://github.com/smokenetwork/smoke-js/tree/master/doc#tags)
+    - [Blocks and transactions](https://github.com/smokenetwork/smoke-js/tree/master/doc#blocks-and-transactions)
+    - [Globals](https://github.com/smokenetwork/smoke-js/tree/master/doc#globals)
+    - [Keys](https://github.com/smokenetwork/smoke-js/tree/master/doc#keys)
+    - [Accounts](https://github.com/smokenetwork/smoke-js/tree/master/doc#accounts)
+    - [Authority / validation](https://github.com/smokenetwork/smoke-js/tree/master/doc#authority--validation)
+    - [Votes](https://github.com/smokenetwork/smoke-js/tree/master/doc#votes)
+    - [Content](https://github.com/smokenetwork/smoke-js/tree/master/doc#content)
+    - [Witnesses](https://github.com/smokenetwork/smoke-js/tree/master/doc#witnesses)
+- [Login API](https://github.com/smokenetwork/smoke-js/tree/master/doc#login)
+- [Follow API](https://github.com/smokenetwork/smoke-js/tree/master/doc#follow-api)
+- [Broadcast API](https://github.com/smokenetwork/smoke-js/tree/master/doc#broadcast-api)
+- [Broadcast](https://github.com/smokenetwork/smoke-js/tree/master/doc#broadcast)
+- [Auth](https://github.com/smokenetwork/smoke-js/tree/master/doc#auth)
 
 
 Here is full documentation:
-https://github.com/steemit/steem-js/tree/master/doc
+https://github.com/smokenetwork/smoke-js/tree/master/doc
 
-## Browser 
-```html 
-<script src="./steem.min.js"></script>
+## Browser
+```html
+<script src="./smoke.min.js"></script>
 <script>
-steem.api.getAccounts(['ned', 'dan'], function(err, response){
+smoke.api.getAccounts(['TECNOSGIRL', 'JACKDUB'], function(err, response){
     console.log(err, response);
 });
 </script>
 ```
 
-## CDN 
-https://cdn.steemjs.com/lib/latest/steem.min.js<br/>
-```html 
-<script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
-```
-
 ## Webpack
-[Please have a look at the webpack usage example.](https://github.com/steemit/steem-js/blob/master/examples/webpack-example)
+[Please have a look at the webpack usage example](https://github.com/smokenetwork/smoke-js/blob/master/examples/webpack-example).
 
 ## Server
 ## Install
 ```
-$ npm install steem --save
+$ npm install @smokenetwork/smoke-js --save
 ```
 
 ## WebSockets
-wss://rpc.smoke.io
-
+`wss://rpc.smoke.io`
 
 ## Examples
 ### Broadcast Vote
 ```js
-var steem = require('steem');
+var smoke = require('@smokenetwork/smoke-js');
 
-var wif = steem.auth.toWif(username, password, 'posting');
-steem.broadcast.vote(wif, voter, author, permlink, weight, function(err, result) {
+var wif = smoke.auth.toWif(username, password, 'posting');
+smoke.broadcast.vote(wif, voter, author, permlink, weight, function(err, result) {
 	console.log(err, result);
 });
 ```
 
 ### Get Accounts
 ```js
-steem.api.getAccounts(['ned', 'dan'], function(err, result) {
+smoke.api.getAccounts(['TECNOSGIRL', 'JACKDUB'], function(err, result) {
 	console.log(err, result);
 });
 ```
 
 ### Get State
-```js 
-steem.api.getState('/trends/funny', function(err, result) {
+```js
+smoke.api.getState('/trends/funny', function(err, result) {
 	console.log(err, result);
 });
 ```
 
 ### Reputation Formatter
-```js 
-var reputation = steem.formatter.reputation(user.reputation);
+```js
+var reputation = smoke.formatter.reputation(user.reputation);
 console.log(reputation);
 ```
 
 ## Contributions
-Patches are welcome! Contributors are listed in the package.json file. Please run the tests before opening a pull request and make sure that you are passing all of them. If you would like to contribute, but don't know what to work on, check the issues list or on Steemit Chat https://steemit.chat/ channel #steemjs.
+Patches are welcome! Please run the tests before opening a pull request and make sure that you are passing all of them.
 
 ## Issues
 When you find issues, please report them!

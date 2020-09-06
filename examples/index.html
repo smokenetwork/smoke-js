@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Steem.js</title>
+  <title>Smoke.js</title>
 </head>
 <body>
 
-<script src="../dist/steem.min.js"></script>
+<script src="../dist/smoke.min.js"></script>
 <script>
-steem.api.getConfig(function(err, response){
+smoke.api.getConfig(function(err, response){
   console.log(err, response);
 });
-steem.api.getAccounts(['ned', 'dan'], function(err, response){
+smoke.api.getAccounts(['ned', 'dan'], function(err, response){
   console.log(err, response);
 });
-steem.api.getAccountCount(function(err, response){
+smoke.api.getAccountCount(function(err, response){
   console.log(err, response);
 });
 </script>

@@ -215,7 +215,7 @@ module.exports = [
       "agent",
       "escrow_id",
       "sbd_amount",
-      "steem_amount",
+      "smoke_amount",
       "fee",
       "ratification_deadline",
       "escrow_expiration",
@@ -244,7 +244,7 @@ module.exports = [
       "receiver",
       "escrow_id",
       "sbd_amount",
-      "steem_amount"
+      "smoke_amount"
     ]
   },
   {
@@ -280,7 +280,7 @@ module.exports = [
     "operation": "claim_reward_balance",
     "params": [
       "account",
-      "reward_steem",
+      "reward_smoke",
       "reward_vests"
     ]
   },
