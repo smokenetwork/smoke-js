@@ -1,6 +1,6 @@
 {
   "name": "@smokenetwork/smoke-js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "smoke-js the JavaScript API for Smoke blockchain",
   "main": "lib/index.js",
   "scripts": {
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/smokenetwork/smoke-js",
   "dependencies": {
+    "@steemit/rpc-auth": "^1.1.1",
     "bigi": "^1.4.2",
     "browserify-aes": "^1.0.6",
     "bs58": "^4.0.0",
